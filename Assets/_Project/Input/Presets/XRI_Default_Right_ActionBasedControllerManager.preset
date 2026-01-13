@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: XRI_Default_Right_ActionBasedControllerManager
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: f9ac216f0eb04754b1d938aac6380b31,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_ManipulationInteractionGroup
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_DirectInteractor
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractor
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TeleportInteractor
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_TeleportModeActivate
+    value: 
+    objectReference: {fileID: -8061240218431744966, guid: 70e8137ddd9ff48a28f5f3c74b530c09,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_TeleportModeCancel
+    value: 
+    objectReference: {fileID: 2307464322626738743, guid: 70e8137ddd9ff48a28f5f3c74b530c09,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_Turn
+    value: 
+    objectReference: {fileID: -6493913391331992944, guid: 70e8137ddd9ff48a28f5f3c74b530c09,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_SnapTurn
+    value: 
+    objectReference: {fileID: -8525429354371678379, guid: 70e8137ddd9ff48a28f5f3c74b530c09,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_Move
+    value: 
+    objectReference: {fileID: -8198699208435500284, guid: 70e8137ddd9ff48a28f5f3c74b530c09,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_UIScroll
+    value: 
+    objectReference: {fileID: -6756787485274679044, guid: 70e8137ddd9ff48a28f5f3c74b530c09,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: m_SmoothMotionEnabled
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_SmoothTurnEnabled
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_UIScrollingEnabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.size
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+    value: UnityEngine.XR.Interaction.Toolkit.Inputs.XRTransformStabilizer, Unity.XR.Interaction.Toolkit
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+    value: set_aimTarget
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+    value: UnityEngine.Object, UnityEngine
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_FloatArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_RayInteractorChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+    value: 2
+    objectReference: {fileID: 0}
+  m_ExcludedProperties: []

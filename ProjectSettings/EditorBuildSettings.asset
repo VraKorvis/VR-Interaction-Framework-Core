@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/SampleScene.unity
+    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/DemoVRScene.unity
+    guid: 2753e361a9cd84986bf255b2d9c98177
+  m_configObjects:
+    com.unity.input.settings: {fileID: 11400000, guid: c6cf083ec1e464c2dbe1f35c66d0876e,
+      type: 2}
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 70e8137ddd9ff48a28f5f3c74b530c09,
+      type: 3}
+    com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 7d880616f2ae94c2695a4577000ee867,
+      type: 2}
+    com.unity.xr.openxr.settings4: {fileID: 11400000, guid: 0f45ba81c41e1488fbcc0cd61869c14c,
+      type: 2}
+    xr.sdk.mock-hmd.settings: {fileID: 11400000, guid: 890599373197d460e889a38052b53e8b,
+      type: 2}
