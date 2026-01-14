@@ -353,14 +353,16 @@ Interested in VR training applications, hand tracking systems, and technical art
 
 ## 📸 Framework Overview
 
+## 📸 Framework Overview
+
 | Pose Authoring Workflow | Intuitive Hand Editor |
 | :---: | :---: |
-| ![workflow](../Docs/wheel_fixed_grab_components.png) | ![editor](../Docs/Setup_Fingers_chains.png) |
+| ![workflow](Docs/wheel_fixed_grab_components.png) | ![editor](Docs/Setup_Fingers_chains.png) |
 | *Visual setup for complex objects like valves* | *Finger curl sliders for precise pose tuning* |
 
 | Data-Driven Poses | One-Click Bone Resolver |
 | :---: | :---: |
-| ![assets](../Docs/HandPoseSO.png) | ![setup](../Docs/Setup_Fingers_chains.png) |
+| ![assets](Docs/HandPoseSO.png) | ![setup](Docs/Setup_Fingers_chains.png) |
 | *Poses saved as reusable ScriptableObjects* | *Automatic bone mapping via "Setup" button* |
 
 ---
@@ -369,7 +371,7 @@ Interested in VR training applications, hand tracking systems, and technical art
 
 | Procedural Finger Curls | Joystick Physics (Configurable Joint) | Valve Interaction (Hinge Joint) |
 | :---: | :---: | :---: |
-| ![fingers](../Docs/demo_fingers_curls.gif) | ![joystick](../Docs/demo_joystick.gif) | ![wheel](../Docs/demo_wheel.gif) |
+| ![fingers](Docs/demo_fingers_curls.gif) | ![joystick](Docs/demo_joystick.gif) | ![wheel](Docs/demo_wheel.gif) |
 | *Real-time input tracking* | *Physics-based lever movement* | *Two-handed rotation* |
 
 ---
