@@ -2,7 +2,7 @@
 
 A hand interaction system for Unity XR showcasing runtime pose blending, procedural finger animation, and flexible bone resolver architecture. Developed as a portfolio demonstration of VR hand animation techniques.
 
-![Demo GIF ]
+[🎥 Jump to Interaction Gallery & Screenshots](#-interaction-gallery)
 
 ---
 
@@ -36,7 +36,6 @@ A hand interaction system for Unity XR showcasing runtime pose blending, procedu
 - Manual task training (assembly, inspection, tool usage)
 - Safety procedure practice (equipment handling, emergency response)
 
-**Current demo:** Basic grab interactions with valve/object manipulation  
 **Extensible to:** Any VR scenario requiring dynamic hand poses
 
 *This system provides the foundation — specific training scenarios require domain expertise integration*
@@ -154,7 +153,7 @@ _Project/
 3. **Set Default Pose and close pose(fist) ** - Select a HandPoseSO asset, (e.g., HandPose_open.asset and HandPose_fist)
 4. **Choose Bone Resolver** - Select "Normalized" type for cross-model support
 5. **Setup Finger Chains** - Click "Setup Finger Chains" button in inspector for scan and setup bones
-6. **Add BaseHandPose component to grabbable object** - choose pose gor grabbing (e.g HandPose_small_grab.asset, HandPosr_wheel_grab.asset.. etc)
+6. **Add BaseHandPose component to grabbable object** - choose pose for grabbing (e.g HandPose_small_grab.asset, HandPose_wheel_grab.asset.. etc)
 
 **No scripting required** - All configuration via Unity Inspector
 
@@ -327,6 +326,7 @@ The code is provided for viewing and educational reference only.
 **Permissions:**
 - View the source code
 - Use code snippets for learning purposes with attribution
+- Running and compiling the project for evaluation purposes
 
 **Restrictions:**
 - No commercial use
@@ -341,6 +341,7 @@ For licensing inquiries, contact: aleksey.zernovv@gmail.com
 
 **Developer:** Aleksey Zernov  
 **Email:** aleksey.zernovv@gmail.com  
+**Telegram:** [@AlekseySZ](https://t.me/AlekseySZ)  
 **LinkedIn:** [linkedin.com/in/aleksey-zernov-86145b191](https://www.linkedin.com/in/aleksey-zernov-86145b191)
 
 **Specialization:** VR/XR interaction systems, procedural animation, Unity editor tooling
@@ -348,25 +349,36 @@ For licensing inquiries, contact: aleksey.zernovv@gmail.com
 Interested in VR training applications, hand tracking systems, and technical art pipelines.
 
 ---
-
 ## 📸 Screenshots
 
-[ ]
-1. Custom editor with finger curl sliders
-2. Hand grabbing valve wheel (both hands)
-3. Pose authoring workflow
-4. Inspector showing bone resolver settings
-5. Runtime hand animation in VR scene
+## 📸 Framework Overview
+
+| Pose Authoring Workflow | Intuitive Hand Editor |
+| :---: | :---: |
+| ![workflow](../Docs/wheel_fixed_grab_components.png) | ![editor](../Docs/Setup_Fingers_chains.png) |
+| *Visual setup for complex objects like valves* | *Finger curl sliders for precise pose tuning* |
+
+| Data-Driven Poses | One-Click Bone Resolver |
+| :---: | :---: |
+| ![assets](../Docs/HandPoseSO.png) | ![setup](../Docs/Setup_Fingers_chains.png) |
+| *Poses saved as reusable ScriptableObjects* | *Automatic bone mapping via "Setup" button* |
 
 ---
 
-## 🎬 Demo Video
+## 🎬 Interaction Gallery
 
-[Embedded YouTube video - 60-90 seconds showing:]
-- Pose authoring in editor
-- Runtime hand grab with animation
-- Two-handed valve operation
-- Procedural finger curl demo
+| Procedural Finger Curls | Joystick Physics (Configurable Joint) | Valve Interaction (Hinge Joint) |
+| :---: | :---: | :---: |
+| ![fingers](../Docs/demo_fingers_curls.gif) | ![joystick](../Docs/demo_joystick.gif) | ![wheel](../Docs/demo_wheel.gif) |
+| *Real-time input tracking* | *Physics-based lever movement* | *Two-handed rotation* |
+
+---
+## 🛠 Key Features
+
+* **One-Click Setup**: The Bone Resolver automatically parses the hand hierarchy and maps finger chains. No manual bone assignment required.
+* **Visual Authoring**: Create complex hand poses directly in the Scene View using intuitive sliders and transform handles.
+* **SO-Based System**: Save and swap hand poses using `HandPoseSO` assets for modular and scalable development.
+* **Physics-Based Interaction**: Robust support for Hinge and Configurable joints (levers, wheels, doors) with VR-optimized velocity tracking.
 
 ---
 
