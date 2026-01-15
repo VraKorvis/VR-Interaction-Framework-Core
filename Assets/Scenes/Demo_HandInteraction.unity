@@ -1224,41 +1224,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.0115
       objectReference: {fileID: 0}
-    - target: {fileID: 2798920823426268344, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
-        type: 3}
-      propertyPath: m_Axis.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2798920823426268344, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
-        type: 3}
-      propertyPath: m_Axis.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2798920823426268344, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
-        type: 3}
-      propertyPath: m_AngularYMotion
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2798920823426268344, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
-        type: 3}
-      propertyPath: m_AngularYLimit.limit
-      value: 177
-      objectReference: {fileID: 0}
-    - target: {fileID: 2798920823426268344, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
-        type: 3}
-      propertyPath: m_AngularZLimit.limit
-      value: 142.55966
-      objectReference: {fileID: 0}
-    - target: {fileID: 2798920823426268344, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
-        type: 3}
-      propertyPath: m_LowAngularXLimit.limit
-      value: 46.158375
-      objectReference: {fileID: 0}
-    - target: {fileID: 2798920823426268344, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
-        type: 3}
-      propertyPath: m_HighAngularXLimit.limit
-      value: 127.390335
-      objectReference: {fileID: 0}
     - target: {fileID: 3644406283315523060, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
         type: 3}
       propertyPath: leftHandPose
@@ -1336,6 +1301,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.216
       objectReference: {fileID: 0}
+    - target: {fileID: 4219512990997751294, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
+        type: 3}
+      propertyPath: m_TrackRotation
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4865037439378380730, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
         type: 3}
       propertyPath: m_LocalScale.x
@@ -1360,6 +1330,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.0751
+      objectReference: {fileID: 0}
+    - target: {fileID: 5730159345059421179, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 6053333810363393942, guid: 72926e9e3b30e428a8fc58ba16fc4c19,
         type: 3}
