@@ -133,8 +133,7 @@ MonoBehaviour:
   handType: 0
   <DefaultPose>k__BackingField: {fileID: 11400000, guid: 0c10ff5a7a94e4b3e991c814b112a181,
     type: 2}
-  <SecondButtonPose>k__BackingField: {fileID: 11400000, guid: 0da37b535d1db4b4ea380bc0f9226cec,
-    type: 2}
+  <SecondButtonPose>k__BackingField: {fileID: 0}
   <AnimationPose>k__BackingField: {fileID: 11400000, guid: 50feb2edd84724921a76d0c142492d90,
     type: 2}
   poses:
@@ -142,6 +141,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 50feb2edd84724921a76d0c142492d90, type: 2}
   - {fileID: 11400000, guid: 0da37b535d1db4b4ea380bc0f9226cec, type: 2}
   - {fileID: 11400000, guid: b67b4b619e1f442fc8376e0db2b7816b, type: 2}
+  - {fileID: 11400000, guid: 5754dfd9eea9f428e9ce4df2f51e3dda, type: 2}
   currentJoints: []
   skeletonAnimationTime: 0.1
   handMovingAnimationTime: 0.1

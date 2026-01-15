@@ -464,27 +464,29 @@ namespace Project.VR.Runtime.HandPose
                 if (_openPoseLookup.TryGetValue(boneData.jointNameInPose, out var startData) &&
                     _fistPoseLookup.TryGetValue(boneData.jointNameInPose, out var endData))
                 {
-                    Vector3 sPos = startData.localPosition;
-                    Quaternion sRot = startData.localRotation;
-                    Vector3 ePos = endData.localPosition;
-                    Quaternion eRot = endData.localRotation;
+                    var start = GetJointDataForHand(startData, boneData.jointNameInPose);
+                    var end = GetJointDataForHand(endData, boneData.jointNameInPose);
 
-                    if (isRightHand)
-                    {
-                        var mirroredStart = BoneResolver.MirrorJoint(sPos, sRot, boneData.jointNameInPose);
-                        sPos = mirroredStart.pos;
-                        sRot = mirroredStart.rot;
-
-                        var mirroredEnd = BoneResolver.MirrorJoint(ePos, eRot, boneData.jointNameInPose);
-                        ePos = mirroredEnd.pos;
-                        eRot = mirroredEnd.rot;
-                    }
-
-                    boneData.transform.localPosition = Vector3.Lerp(sPos, ePos, chain.curlValue);
-                    boneData.transform.localRotation = Quaternion.Slerp(sRot, eRot, chain.curlValue);
+                    boneData.transform.localPosition = Vector3.Lerp(start.pos, end.pos, chain.curlValue);
+                    boneData.transform.localRotation = Quaternion.Slerp(start.rot, end.rot, chain.curlValue);
                 }
             }
         }
+        private (Vector3 pos, Quaternion rot) GetJointDataForHand(HandPoseSO.JointData data, string jointName)
+        {
+            Vector3 pos = data.localPosition;
+            Quaternion rot = data.localRotation;
+
+            if (isRightHand)
+            {
+                var mirrored = BoneResolver.MirrorJoint(pos, rot, jointName);
+                pos = mirrored.pos;
+                rot = mirrored.rot;
+            }
+
+            return (pos, rot);
+        }
+        
 
         #endregion
 
@@ -601,16 +603,18 @@ namespace Project.VR.Runtime.HandPose
 
             foreach (var boneData in bones)
             {
-                if (!openPoseMap.TryGetValue(boneData.jointNameInPose, out var open) ||
-                    !fistPoseMap.TryGetValue(boneData.jointNameInPose, out var fist))
-                {
+                if (!openPoseMap.TryGetValue(boneData.jointNameInPose, out var openData) ||
+                    !fistPoseMap.TryGetValue(boneData.jointNameInPose, out var fistData))
                     continue;
-                }
 
-                float total = Quaternion.Angle(open.localRotation, fist.localRotation);
+                var open = GetJointDataForHand(openData, boneData.jointNameInPose);
+                var fist = GetJointDataForHand(fistData, boneData.jointNameInPose);
+
+                float total = Quaternion.Angle(open.rot, fist.rot);
                 if (total < minEffectiveCurlAngle) continue;
 
-                float current = Quaternion.Angle(open.localRotation, boneData.transform.localRotation);
+                float current = Quaternion.Angle(open.rot, boneData.transform.localRotation);
+        
                 sum += Mathf.Clamp01(current / total);
                 count++;
             }
