@@ -18,46 +18,46 @@ MonoBehaviour:
     localRotation: {x: 0, y: -0, z: -0, w: 1}
   - jointName: index_metacarpal
     localPosition: {x: 0.019818999, y: -0.009505, z: 0.036447998}
-    localRotation: {x: 0.105543666, y: 0.028838553, z: 0.023291657, w: 0.9937235}
+    localRotation: {x: 0.09411625, y: 0.025716146, z: 0.020769823, w: 0.99501234}
   - jointName: index_proximal
     localPosition: {x: 0.003732, y: 0.002189, z: 0.059548}
-    localRotation: {x: 0.5507981, y: 0.020599576, z: 0.060021218, w: 0.8322227}
+    localRotation: {x: 0.5114811, y: 0.02712157, z: 0.049265876, w: 0.85745233}
   - jointName: index_intermediate
     localPosition: {x: 0.0000014584699, y: -0.0000018205594, z: 0.037927467}
-    localRotation: {x: 0.5063471, y: -0.047432896, z: 0.011028921, w: 0.8609536}
+    localRotation: {x: 0.468537, y: -0.04294521, z: 0.012816819, w: 0.88230634}
   - jointName: index_distal
     localPosition: {x: 0.0000009285007, y: 0.00000015937881, z: 0.024305161}
-    localRotation: {x: 0.54606783, y: -0.042563103, z: 0.01054412, w: 0.83659256}
+    localRotation: {x: 0.49227196, y: -0.041388918, z: 0.011397339, w: 0.8693822}
   - jointName: index_tip
     localPosition: {x: -0.00029495324, y: 0.0010254311, z: 0.022364646}
-    localRotation: {x: 0, y: 1.6176298e-19, z: 0, w: 1}
+    localRotation: {x: 0, y: 1.9125326e-19, z: 0, w: 1}
   - jointName: little_metacarpal
     localPosition: {x: -0.022999, y: -0.009419999, z: 0.034073997}
-    localRotation: {x: 0.1632499, y: -0.110233046, z: 0.09950988, w: 0.975344}
+    localRotation: {x: 0.14688917, y: -0.113877475, z: 0.11202556, w: 0.97616893}
   - jointName: little_proximal
     localPosition: {x: 0.0000025303066, y: 0.000001160611, z: 0.045651983}
-    localRotation: {x: 0.27565148, y: -0.00960559, z: -0.038183462, w: 0.96045095}
+    localRotation: {x: 0.23821376, y: -0.0144568095, z: -0.045462072, w: 0.97004044}
   - jointName: little_intermediate
     localPosition: {x: 0.0000001720091, y: -0.0000006646861, z: 0.030719941}
-    localRotation: {x: 0.57152146, y: -0.032016452, z: 0.049190544, w: 0.8184855}
+    localRotation: {x: 0.54900247, y: -0.03136349, z: 0.051460087, w: 0.8336454}
   - jointName: little_distal
     localPosition: {x: 0.00000013540283, y: 0.0000006386686, z: 0.020311324}
-    localRotation: {x: 0.5500696, y: 0.023379913, z: 0.0036850541, w: 0.8347833}
+    localRotation: {x: 0.50509256, y: 0.026623022, z: 0.0031626055, w: 0.86264867}
   - jointName: little_tip
     localPosition: {x: 0.00024632577, y: 0.0012151983, z: 0.021923328}
     localRotation: {x: -2.7755576e-17, y: 2.7755576e-17, z: -1.3877788e-17, w: 1}
   - jointName: middle_metacarpal
     localPosition: {x: 0.00361, y: -0.007648, z: 0.034286}
-    localRotation: {x: 0.13619202, y: 0.06342072, z: -0.026724145, w: 0.9882891}
+    localRotation: {x: 0.11051606, y: 0.051464166, z: -0.021685906, w: 0.9923041}
   - jointName: middle_proximal
     localPosition: {x: -0.0018839999, y: 0.005105, z: 0.061360996}
-    localRotation: {x: 0.56661904, y: -0.02683923, z: 0.12013288, w: 0.8147335}
+    localRotation: {x: 0.5014531, y: -0.024284162, z: 0.10039013, w: 0.85899764}
   - jointName: middle_intermediate
     localPosition: {x: -0.00000033112343, y: -0.0000008804644, z: 0.042926535}
-    localRotation: {x: 0.5526096, y: -0.09451386, z: 0.027657796, w: 0.8276019}
+    localRotation: {x: 0.4918231, y: -0.07773365, z: 0.025019087, w: 0.86685735}
   - jointName: middle_distal
     localPosition: {x: 0.00000017030132, y: 0.0000005871987, z: 0.027548432}
-    localRotation: {x: 0.4302775, y: -0.026589638, z: 0.017573161, w: 0.9021339}
+    localRotation: {x: 0.3473486, y: -0.022235187, z: 0.022371452, w: 0.93720543}
   - jointName: middle_tip
     localPosition: {x: -0.00030950914, y: 0.0011371507, z: 0.02496384}
     localRotation: {x: 2.7755576e-17, y: 3.469447e-18, z: 6.938894e-18, w: 1}
@@ -66,25 +66,25 @@ MonoBehaviour:
     localRotation: {x: 0, y: -0, z: -0, w: 1}
   - jointName: ring_metacarpal
     localPosition: {x: -0.014992, y: -0.0060159997, z: 0.034776}
-    localRotation: {x: 0.10152377, y: 0.06530932, z: 0.03828351, w: 0.9919486}
+    localRotation: {x: 0.082572214, y: 0.053117953, z: 0.031137079, w: 0.9946813}
   - jointName: ring_proximal
     localPosition: {x: -0.002473, y: -0.000513, z: 0.053917997}
-    localRotation: {x: 0.45203286, y: -0.11847502, z: 0.103210844, w: 0.8780533}
+    localRotation: {x: 0.3863957, y: -0.11370285, z: 0.09537891, w: 0.9103148}
   - jointName: ring_intermediate
     localPosition: {x: 0.0000005266108, y: 0.0000003652638, z: 0.03899503}
-    localRotation: {x: 0.62331223, y: -0.037015993, z: 0.010936557, w: 0.7810199}
+    localRotation: {x: 0.5684512, y: -0.028940467, z: 0.01652036, w: 0.82204187}
   - jointName: ring_distal
     localPosition: {x: -0.000001039646, y: -0.00000054232555, z: 0.026573557}
-    localRotation: {x: 0.49267277, y: 0.025805183, z: 0.0061173732, w: 0.86981046}
+    localRotation: {x: 0.4223667, y: 0.026887255, z: 0.0067499657, w: 0.9060011}
   - jointName: ring_tip
     localPosition: {x: -0.0002563861, y: 0.0016081122, z: 0.024326071}
     localRotation: {x: -0.000029424828, y: -2.7755576e-17, z: -8.16703e-22, w: 1}
   - jointName: thumb_metacarpal
     localPosition: {x: 0.030218, y: -0.016083999, z: 0.034498}
-    localRotation: {x: 0.11203733, y: 0.57908535, z: -0.4557641, w: 0.66662353}
+    localRotation: {x: 0.22016305, y: 0.66991895, z: -0.3614642, w: 0.60998404}
   - jointName: thumb_proximal
     localPosition: {x: -0.000001152053, y: -0.000004860463, z: 0.032513987}
-    localRotation: {x: 0.5559556, y: -0.0042492463, z: -0.0017123655, w: 0.8311994}
+    localRotation: {x: 0.7288271, y: 0.02522915, z: -0.05452761, w: 0.6820567}
   - jointName: thumb_distal
     localPosition: {x: -0.000001023574, y: -0.000001828242, z: 0.033794336}
     localRotation: {x: 0.11291981, y: 0.05065549, z: -0.0791567, w: 0.98914987}
