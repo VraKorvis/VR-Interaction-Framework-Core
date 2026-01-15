@@ -1,7 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Project.VR.Runtime.HandPose.VR.Runtime.HandPose;
+using _Project.VR.Runtime.HandPose;
 using UnityEngine;
 
 namespace Project.VR.Runtime.HandPose
@@ -14,9 +14,9 @@ namespace Project.VR.Runtime.HandPose
         [SerializeField] 
         private BoneResolverType _boneResolverType = BoneResolverType.Exact;
 
-        private IBoneResolver _boneResolver;
+        private BaseBoneResolver _boneResolver;
 
-        public IBoneResolver BoneResolver => _boneResolver;
+        public BaseBoneResolver BoneResolver => _boneResolver;
 
         [SerializeField] private HandSkeletonGizmos rootBone;
         public HandSkeletonGizmos RootBone => rootBone;
@@ -197,7 +197,7 @@ namespace Project.VR.Runtime.HandPose
 
                     if (isRightHand)
                     {
-                        var mirroredData = BoneResolver.MirrorJoint(finalPos, finalRot, poseJoint.jointName);
+                        var mirroredData = BoneResolver.MirrorJoint(finalPos, finalRot);
                         finalPos = mirroredData.pos;
                         finalRot = mirroredData.rot;
                     }
@@ -479,7 +479,7 @@ namespace Project.VR.Runtime.HandPose
 
             if (isRightHand)
             {
-                var mirrored = BoneResolver.MirrorJoint(pos, rot, jointName);
+                var mirrored = BoneResolver.MirrorJoint(pos, rot);
                 pos = mirrored.pos;
                 rot = mirrored.rot;
             }

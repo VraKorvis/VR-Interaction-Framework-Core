@@ -1,5 +1,5 @@
+using _Project.VR.Runtime.HandPose;
 using NUnit.Framework;
-using Project.VR.Runtime.HandPose;
 using UnityEngine;
 
 namespace Project.VR.Runtime.HandPose.VR.Editor
@@ -7,7 +7,7 @@ namespace Project.VR.Runtime.HandPose.VR.Editor
     //TODO run tests
     public class BoneResolverTests
     {
-        private NormalizedNameBoneResolver _resolver;
+        private BaseBoneResolver _resolver;
 
         [SetUp]
         public void Setup()
@@ -33,12 +33,12 @@ namespace Project.VR.Runtime.HandPose.VR.Editor
             Vector3 pos = new Vector3(0.1f, 0.2f, 0.3f);
             Quaternion rot = Quaternion.Euler(10, 20, 30);
 
-            var mirroredIndex = _resolver.MirrorJoint(pos, rot, "index_proximal");
+            var mirroredIndex = _resolver.MirrorJoint(pos, rot);
     
             Assert.AreEqual(-0.1f, mirroredIndex.pos.x, 0.001f, "X position must be inverted");
             Assert.Less(mirroredIndex.rot.y, 0, "Y rotation should be inverted for standard bone");
             
-            var mirroredThumb = _resolver.MirrorJoint(pos, rot, "thumb_proximal");
+            var mirroredThumb = _resolver.MirrorJoint(pos, rot);
     
             Assert.AreEqual(-0.1f, mirroredThumb.pos.x, 0.001f, "X position must still be inverted for thumb");
         }

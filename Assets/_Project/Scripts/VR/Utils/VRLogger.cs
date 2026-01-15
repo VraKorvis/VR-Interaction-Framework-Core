@@ -14,6 +14,11 @@ namespace Project.VR.Runtime.HandPose
         {
             UnityEngine.Debug.LogWarning($"{k_Prefix} {message}");
         }
+        
+        public static void Log(string message)
+        {
+            UnityEngine.Debug.Log($"{k_Prefix} {message}");
+        }
 
         public static void LogRuntimeError(string message, UnityEngine.Object context = null)
         {
