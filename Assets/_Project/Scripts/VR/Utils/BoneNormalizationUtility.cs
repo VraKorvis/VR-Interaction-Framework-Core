@@ -1,4 +1,3 @@
-using UnityEngine;
 using UnityEditor;
 
 namespace Project.VR.Runtime.HandPose.EditorUtils
@@ -13,7 +12,7 @@ namespace Project.VR.Runtime.HandPose.EditorUtils
             var selected = Selection.activeObject as HandPoseSO;
             if (selected == null)
             {
-                Debug.LogError("Select HandPoseSO in inspector!");
+                VRLogger.LogSetupWarning("Select HandPoseSO in inspector!");
                 return;
             }
 
@@ -39,10 +38,10 @@ namespace Project.VR.Runtime.HandPose.EditorUtils
             }
 
             AssetDatabase.SaveAssets();
-            Debug.Log($"[Baking] Normalizing completed. Normalized assets: {count}");
+            VRLogger.Log($"[Baking] Normalizing completed. Normalized assets: {count}");
         }
 
-        public static bool NormalizePose(HandPoseSO pose)
+        private static bool NormalizePose(HandPoseSO pose)
         {
             if (pose == null || pose.jointsData == null) return false;
 
@@ -64,7 +63,7 @@ namespace Project.VR.Runtime.HandPose.EditorUtils
             if (isDirty)
             {
                 EditorUtility.SetDirty(pose);
-                Debug.Log($"[Baking] Asset '{pose.name}' normalized.");
+                VRLogger.Log($"[Baking] Asset '{pose.name}' normalized.");
             }
 
             return isDirty;
