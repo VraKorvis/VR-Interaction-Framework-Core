@@ -213,7 +213,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -4640650921596906464, guid: 420c6d7d1d5924ee38000a66284541af,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 713007034714863622}
+      addedObject: {fileID: 3485274463843491}
+    - targetCorrespondingSourceObject: {fileID: -4640650921596906464, guid: 420c6d7d1d5924ee38000a66284541af,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6065272559918363218}
     - targetCorrespondingSourceObject: {fileID: -4640650921596906464, guid: 420c6d7d1d5924ee38000a66284541af,
         type: 3}
       insertIndex: -1
@@ -427,9 +431,10 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  leftAttach: {fileID: 3262956637410226185}
-  rightAttach: {fileID: 6762604685104996861}
---- !u!114 &713007034714863622
+  leftHandAttach: {fileID: 0}
+  rightHandAttach: {fileID: 0}
+  snapObjectToHand: 0
+--- !u!114 &3485274463843491
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -438,19 +443,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 199442401890876502}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 556de2701800d4e509314b25f6733a52, type: 3}
+  m_Script: {fileID: 11500000, guid: 8aad205011ce442ebe3e0f116bc4fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftHandPose: {fileID: 11400000, guid: 5754dfd9eea9f428e9ce4df2f51e3dda, type: 2}
   rightHandPose: {fileID: 11400000, guid: 5754dfd9eea9f428e9ce4df2f51e3dda, type: 2}
-  leftHandAttach: {fileID: 3262956637410226185}
-  rightHandAttach: {fileID: 6762604685104996861}
   blendTime: 0.15
   easeInTimeOverride: 0
   overrideEaseTime: 0
   hasAnimationPose: 0
   interactable: {fileID: 4878491499925281243}
+--- !u!114 &6065272559918363218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 199442401890876502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d689dc31af242f993adfe1c3d6f62f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   useAttachDelay: 0
+  leftHandAttach: {fileID: 3262956637410226185}
+  rightHandAttach: {fileID: 6762604685104996861}
 --- !u!153 &6911505038575272093
 ConfigurableJoint:
   m_ObjectHideFlags: 0

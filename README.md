@@ -1,6 +1,6 @@
 # Hand Interaction System - VR Training Demo
 
-A hand interaction system for Unity XR showcasing runtime pose blending, procedural finger animation, and flexible bone resolver architecture. Developed as a portfolio demonstration of VR hand animation techniques.
+A hand interaction system for Unity XR showcasing runtime pose blending, procedural finger animation, and flexible bone resolver architecture.
 
 [🎥 Jump to Interaction Gallery & Screenshots](#-interaction-gallery)
 
@@ -28,36 +28,21 @@ A hand interaction system for Unity XR showcasing runtime pose blending, procedu
 
 ---
 
-## 📋 Designed For
+### 📋 Designed For
 
-**VR training applications requiring realistic hand interactions:**
-
-- Equipment operation simulation (valves, switches, control panels)
-- Manual task training (assembly, inspection, tool usage)
-- Safety procedure practice (equipment handling, emergency response)
-
-**Extensible to:** Any VR scenario requiring dynamic hand poses
-
-*This system provides the foundation — specific training scenarios require domain expertise integration*
+Functional for common VR training scenarios: equipment operation, valves, and tool handling.
 
 ---
 
 ## 🏗️ Architecture Overview
 ```
-HandAnimator (Core Controller)
-├── IBoneResolver (Bone Naming Strategy)
-│   ├── ExactNameBoneResolver
-│   └── NormalizedNameBoneResolver
-│
-├── HandPoseSO (ScriptableObject Data)
-│   └── JointData[] (position + rotation per bone)
-│
-└── Core Capabilities:
-    ├── Instant pose switching (AnimateInstantly)
-    ├── Smooth pose blending (BeginNewPoses + coroutine lerp)
-    ├── Procedural finger curl (ApplyFingerCurl)
-    ├── Hand detachment from controller
-    └── Object tracking (MoveHandToTarget + LateUpdate)
+HandPoseManager (Core Hub)
+├── IGrabModule (Modular Behaviors)
+│   ├── SimpleGrabModule (Standard items: cans, tools)
+│   └── FixedSnapModule (Fixed objects: wheels, levers)
+├── XRHandAwareGrabInteractable (XRIT Provider)
+│   └── Logic for L/R attach points & Snap modes
+└── HandAnimator (Execution Layer)
 ```
 
 ---
@@ -102,7 +87,7 @@ ApplyFingerCurl(fingerChain);
 
 **Use case:** Dynamic hand reactions to controller input (trigger squeeze = gradual fist)
 
-### 3. Hand Mirroring Algorithm
+### 3. Automatic Hand Mirroring
 Left-hand poses automatically flip to right hand:
 
 ```csharp
@@ -115,45 +100,16 @@ public JointTransformData MirrorJoint(Vector3 localPos, Quaternion localRot, str
 }
 ```
 
+
 **Benefit:** Artists author half the poses, system guarantees symmetry
 
 ---
 
-## 📦 Project Structure
-```
-_Project/
-├── HandAnimator.cs              # Core animation controller
-├── HandPoseSO.cs                # Pose data ScriptableObject
-├── BaseHandPose.cs              # Base interaction component
-├── HandPoseOnFixedGrab.cs       # Fixed attachment (e.g. valve wheel)
-│
-├── BoneResolvers/
-│   ├── IBoneResolver.cs         # Resolver interface
-│   ├── ExactNameBoneResolver.cs
-│   └── NormalizedNameBoneResolver.cs
-│
-├── Editor/
-│   └── HandAnimatorEditor.cs    # Custom inspector with pose tools
-│
-└── Data/
-    └── Poses/                   # HandPoseSO assets
-        ├── HandOpen.asset       # Relaxed hand
-        ├── HandFist.asset       # Fully closed fist
-        └── ValveGrab_Left.asset # Example grab pose
-```
-
----
-
 ## 🚀 Quick Start
-
 ### Setup (Inspector-based)
-
-1. **Attach HandAnimator component** to your hand visual GameObject
-2. **Assign Root Bone** - Drag the hand skeleton root transform
-3. **Set Default Pose and close pose(fist) ** - Select a HandPoseSO asset, (e.g., HandPose_open.asset and HandPose_fist)
-4. **Choose Bone Resolver** - Select "Normalized" type for cross-model support
-5. **Setup Finger Chains** - Click "Setup Finger Chains" button in inspector for scan and setup bones
-6. **Add BaseHandPose component to grabbable object** - choose pose for grabbing (e.g HandPose_small_grab.asset, HandPose_wheel_grab.asset.. etc)
+1. **For standard items**: Use `XRHandAwareGrabInteractable` (Snap Enabled) + `SimpleGrabModule`.
+2. **For machinery (wheels/levers)**: Use `XRHandAwareGrabInteractable` (Snap Disabled) + `FixedSnapModule`.
+3. **Assign Attach Points**: Set your transforms in the component's inspector. The custom editor will handle the rest.
 
 **No scripting required** - All configuration via Unity Inspector
 
@@ -200,17 +156,6 @@ handAnimator.ApplyFingerCurl(fingerChain);
 
 ---
 
-## 🔬 Technical Specifications
-
-| Feature | Implementation                                           |
-|---------|----------------------------------------------------------|
-| **Framework** | Unity 2022.3 LTS, XR Interaction Toolkit 2.6.5+          |
-| **VR Platform** | OpenXR (Quest, PCVR, SteamVR compatible)                 |
-| **Render Pipeline** | Universal Render Pipeline (URP)                          |
-| **Animation Method** | Transform hierarchy manipulation (no Animator component) |
-
----
-
 ## 📦 Project Setup
 
 ### Dependencies
@@ -254,19 +199,6 @@ public class MyCustomResolver : IBoneResolver
 }
 ```
 
-### Extending Hand Interactions
-Create custom grabbable behaviors by inheriting `BaseHandPose`:
-```csharp
-public class MyInteractable : BaseHandPose
-{
-    protected override void OnHandGrabbed(HandAnimator hand)
-    {
-        base.OnHandGrabbed(hand);
-        // Custom logic: haptics, audio, effects
-    }
-}
-```
-
 ---
 
 ## 🔮 Future Enhancements
@@ -286,35 +218,20 @@ System designed with provider pattern for future animation sources:
 
 ---
 
-## ⚠️ Project Status
 
-This is a **working development repository** demonstrating production-ready hand animation techniques. Some optimizations and features are marked as TODO in code for future refinement.
-
-**Current state:** Fully functional for VR training applications  
-**Code quality:** Production-ready architecture with documented improvement areas
+## 🛠 Project Status
+Development repository for a VR hand interaction system.
+- **Current state:** Functional demo for grabbing objects and interacting with fixed machinery (wheels, levers).
+- **Core:** Modular system using ScriptableObjects and custom Editor tools.
 
 For commercial integration or custom development, contact: aleksey.zernovv@gmail.com
 
 ---
 
-## 📝 Code Quality
-
-✅ **Interface-based design** - Swappable bone resolver strategies (IBoneResolver)  
-✅ **Event-driven architecture** - XR Interaction Toolkit integration  
-✅ **Minimal runtime allocations** - Coroutine reuse, object pooling ready  
-✅ **Editor tooling** - Custom inspectors, one-click workflows  
-✅ **Cross-platform** - OpenXR standard, device-agnostic
-
----
-
-## 🎓 Techniques Demonstrated
-
-- **ScriptableObject architecture** - Data-driven pose authoring
-- **Custom Editor extensions** - Artist-friendly Unity tools
-- **Strategy Pattern** - Swappable bone resolver implementations (IBoneResolver)
-- **Coroutine-based animation** - Smooth blending without Animator overhead
-- **Regex text processing** - Bone name normalization across different rigs
-
+## 📝 Modular
+✅ **Decoupled Logic** — Interaction types are separated into modules.
+✅ **Editor Tooling** — Custom inspectors for easier object setup.
+✅ **Performance** — No Animator overhead, direct bone manipulation.
 ---
 
 ## 📄 License
@@ -351,10 +268,6 @@ Interested in VR training applications, hand tracking systems, and technical art
 ---
 ## 📸 Screenshots
 
-## 📸 Framework Overview
-
-## 📸 Framework Overview
-
 | Pose Authoring Workflow | Intuitive Hand Editor |
 | :---: | :---: |
 | ![workflow](Docs/wheel_fixed_grab_components.png) | ![editor](Docs/Setup_Fingers_chains.png) |
@@ -370,9 +283,9 @@ Interested in VR training applications, hand tracking systems, and technical art
 ## 🎬 Interaction Gallery
 
 | Procedural Finger Curls | Joystick Physics (Configurable Joint) | Valve Interaction (Hinge Joint) |
-| :---: | :---: | :---: |
-| ![fingers](Docs/demo_fingers_curls.gif) | ![joystick](Docs/demo_joystick.gif) | ![wheel](Docs/demo_wheel.gif) |
-| *Real-time input tracking* | *Physics-based lever movement* | *Two-handed rotation* |
+| :---: |:-------------------------------------:| :---: |
+| ![fingers](Docs/demo_fingers_curls.gif) |  ![joystick](Docs/demo_joystick.gif)  | ![wheel](Docs/demo_wheel.gif) |
+| *Real-time input tracking* |    *Physics-based lever movement*     | *Two-handed rotation* |
 
 ---
 ## 🛠 Key Features

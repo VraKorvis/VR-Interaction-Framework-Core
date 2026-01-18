@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 6839950081011272888}
   - component: {fileID: 6331476364566637229}
   - component: {fileID: 8938767695563420055}
-  - component: {fileID: 4883732923357932126}
   - component: {fileID: 2103531767789408633}
+  - component: {fileID: 4959620342613252991}
+  - component: {fileID: 1233901930106459251}
   m_Layer: 0
   m_Name: Can
   m_TagString: Untagged
@@ -268,29 +269,9 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  leftAttach: {fileID: 5854814691660088903}
-  rightAttach: {fileID: 7306637370524430866}
---- !u!114 &4883732923357932126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 14599432816560294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 27d0924f2ab845199f09480fada24ba9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHandPose: {fileID: 11400000, guid: 0da37b535d1db4b4ea380bc0f9226cec, type: 2}
-  rightHandPose: {fileID: 11400000, guid: 0da37b535d1db4b4ea380bc0f9226cec, type: 2}
   leftHandAttach: {fileID: 5854814691660088903}
   rightHandAttach: {fileID: 7306637370524430866}
-  blendTime: 0.15
-  easeInTimeOverride: 0
-  overrideEaseTime: 0
-  hasAnimationPose: 0
-  interactable: {fileID: 8938767695563420055}
+  snapObjectToHand: 1
 --- !u!64 &2103531767789408633
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -313,6 +294,37 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &4959620342613252991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14599432816560294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aad205011ce442ebe3e0f116bc4fffa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftHandPose: {fileID: 11400000, guid: 0da37b535d1db4b4ea380bc0f9226cec, type: 2}
+  rightHandPose: {fileID: 11400000, guid: 0da37b535d1db4b4ea380bc0f9226cec, type: 2}
+  blendTime: 0.15
+  easeInTimeOverride: 0
+  overrideEaseTime: 0
+  hasAnimationPose: 0
+  interactable: {fileID: 8938767695563420055}
+--- !u!114 &1233901930106459251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14599432816560294}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7e5db077d8b4678b19d2de63969545e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1765884839483545511
 GameObject:
   m_ObjectHideFlags: 0

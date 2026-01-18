@@ -1,21 +1,17 @@
 using System;
 using System.Collections.Generic;
+using _Project.VR.Runtime.HandPose;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 namespace Project.VR.Runtime.HandPose
 {
     [Serializable]
-    [RequireComponent(typeof(XRBaseInteractable))]
-    public class BaseHandPose : MonoBehaviour
+    [RequireComponent(typeof(XRHandAwareGrabInteractable))]
+    public class HandPoseManager : MonoBehaviour
     {
         [SerializeField] private HandPoseSO leftHandPose;
         [SerializeField] private HandPoseSO rightHandPose;
-        
-        [SerializeField] 
-        protected Transform leftHandAttach = null;
-        [SerializeField] 
-        protected Transform rightHandAttach = null;
     
         private HandAnimator _currentLeftHand = null;
         private HandAnimator _currentRightHand = null;
@@ -25,34 +21,54 @@ namespace Project.VR.Runtime.HandPose
         [SerializeField] private protected bool overrideEaseTime;
         [SerializeField] private bool hasAnimationPose;
 
-        public XRGrabInteractable interactable;
+        public bool OverrideEaseTime => overrideEaseTime;
+        public float EaseInTimeOverride => easeInTimeOverride;
+        
+        public XRHandAwareGrabInteractable interactable;
         
         private protected List<HandAnimator> currentlyGrabbingHands = new();
+        
+        private IGrabModule[] _modules;
+        
+        private IGrabModule[] Modules 
+        {
+            get 
+            {
+                if (_modules == null || _modules.Length == 0)
+                {
+                    _modules = GetComponents<IGrabModule>();
+                }
+                return _modules;
+            }
+        }
       
         private protected void Awake()
         {
-            interactable = GetComponent<XRGrabInteractable>();
-            OnValidate();
+            interactable = GetComponent<XRHandAwareGrabInteractable>();
+            _modules = GetComponents<IGrabModule>(); 
             interactable.selectEntered.AddListener(OnSelectEntered);
             interactable.selectExited.AddListener(OnRelease);
         }
         
         void OnDestroy()
         {
-            interactable.selectEntered.RemoveListener(OnSelectEntered);
-            interactable.selectExited.RemoveListener(OnRelease);
+            if (interactable)
+            {
+                interactable.selectEntered.RemoveListener(OnSelectEntered);
+                interactable.selectExited.RemoveListener(OnRelease);
+            }
         }
     
         private void OnValidate()
         {
             if (!interactable)
             {
-                interactable = GetComponent<XRGrabInteractable>()?.GetComponentInParent<XRGrabInteractable>();
+                interactable = GetComponent<XRHandAwareGrabInteractable>()?.GetComponentInParent<XRHandAwareGrabInteractable>();
             }
 
             if (!interactable)
             {
-                VRLogger.LogSimpleWarning($"{gameObject.name} does not have an XRGrabInteractable assigned in parent");
+                VRLogger.LogSimpleWarning($"{gameObject.name} does not have an HandAwareGrabInteractable assigned in parent");
             }
         }
 
@@ -66,7 +82,6 @@ namespace Project.VR.Runtime.HandPose
             }
             
             BeginNewHandPoses(handReference.Hand);
-
         }
     
         private void OnRelease(SelectExitEventArgs args)
@@ -82,6 +97,11 @@ namespace Project.VR.Runtime.HandPose
             if (!currentlyGrabbingHands.Contains(handAnimator))
             {
                 return;
+            }
+
+            foreach (var m in Modules)
+            {
+                m.OnRelease(handAnimator);
             }
             
             ReleaseHand(handAnimator);
@@ -118,7 +138,7 @@ namespace Project.VR.Runtime.HandPose
         {
             if (!hand || !CheckIfPoseExistForHand(hand))
             {
-                VRLogger.LogSimpleWarning($"Pose not found for {gameObject.name}");
+                VRLogger.LogSetupWarning($"Pose not found for {gameObject.name}");
                 return;
             }
 
@@ -134,7 +154,8 @@ namespace Project.VR.Runtime.HandPose
                 _currentRightHand = hand;
                 SetToPose(_currentRightHand, rightHandPose);
             }
-
+            
+            foreach (var m in _modules) m.OnGrab(hand);
         }
     
         private void SetToPose(HandAnimator hand, HandPoseSO targetPose)
@@ -150,6 +171,5 @@ namespace Project.VR.Runtime.HandPose
             }
             return rightHandPose && hand.HandType == HandsType.Right;
         }
-        
     }
 }

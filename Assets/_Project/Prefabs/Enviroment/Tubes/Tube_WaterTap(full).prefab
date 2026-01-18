@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 4231262194098096541}
   - component: {fileID: 545381740852505764}
   - component: {fileID: 6394428807577040909}
-  - component: {fileID: 1915076686822571427}
-  - component: {fileID: 1666797648074265176}
+  - component: {fileID: 4528509600850544111}
+  - component: {fileID: 4217128593461714314}
+  - component: {fileID: 8376471322291986737}
   - component: {fileID: 344377261088478489}
   m_Layer: 0
   m_Name: Valve
@@ -164,22 +165,22 @@ HingeJoint:
     targetVelocity: 0
     force: 0
     freeSpin: 0
-  m_UseLimits: 0
+  m_UseLimits: 1
   m_ExtendedLimits: 0
   m_UseAcceleration: 0
   m_Limits:
-    min: -180
-    max: 180
+    min: -120
+    max: 120
     bounciness: 0
     bounceMinVelocity: 0.2
     contactDistance: 0
   m_BreakForce: Infinity
   m_BreakTorque: Infinity
-  m_EnableCollision: 0
+  m_EnableCollision: 1
   m_EnablePreprocessing: 1
   m_MassScale: 1
   m_ConnectedMassScale: 1
---- !u!114 &1915076686822571427
+--- !u!114 &4528509600850544111
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -188,7 +189,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1461007386683940875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ad34abafad169848a38072baa96cdb2, type: 3}
+  m_Script: {fileID: 11500000, guid: 8425187af8d84f4e86fb28a4c08ed629, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -197,7 +198,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 4294967295
+    m_Bits: 1
   m_DistanceCalculationMode: 1
   m_SelectMode: 1
   m_FocusMode: 1
@@ -281,8 +282,8 @@ MonoBehaviour:
   m_OnDeactivate:
     m_PersistentCalls:
       m_Calls: []
-  m_AttachTransform: {fileID: 0}
-  m_SecondaryAttachTransform: {fileID: 0}
+  m_AttachTransform: {fileID: 989672868094477513}
+  m_SecondaryAttachTransform: {fileID: 8276008309004939371}
   m_UseDynamicAttach: 0
   m_MatchAttachPosition: 1
   m_MatchAttachRotation: 1
@@ -299,10 +300,10 @@ MonoBehaviour:
   m_SmoothPositionAmount: 8
   m_TightenPosition: 0.1
   m_TrackRotation: 1
-  m_SmoothRotation: 1
+  m_SmoothRotation: 0
   m_SmoothRotationAmount: 8
   m_TightenRotation: 0.1
-  m_TrackScale: 1
+  m_TrackScale: 0
   m_SmoothScale: 0
   m_SmoothScaleAmount: 8
   m_TightenScale: 0.1
@@ -329,10 +330,12 @@ MonoBehaviour:
   m_RetainTransformParent: 1
   m_AttachPointCompatibilityMode: 0
   m_StartingSingleGrabTransformers: []
-  m_StartingMultipleGrabTransformers:
-  - {fileID: 344377261088478489}
+  m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &1666797648074265176
+  leftHandAttach: {fileID: 0}
+  rightHandAttach: {fileID: 0}
+  snapObjectToHand: 0
+--- !u!114 &4217128593461714314
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,19 +344,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 1461007386683940875}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 556de2701800d4e509314b25f6733a52, type: 3}
+  m_Script: {fileID: 11500000, guid: 8aad205011ce442ebe3e0f116bc4fffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   leftHandPose: {fileID: 11400000, guid: b67b4b619e1f442fc8376e0db2b7816b, type: 2}
-  rightHandPose: {fileID: 11400000, guid: b67b4b619e1f442fc8376e0db2b7816b, type: 2}
-  leftHandAttach: {fileID: 989672868094477513}
-  rightHandAttach: {fileID: 8276008309004939371}
+  rightHandPose: {fileID: 11400000, guid: b8b1eb13dcfc24e5a908196a970acb61, type: 2}
   blendTime: 0.15
   easeInTimeOverride: 0
   overrideEaseTime: 0
   hasAnimationPose: 0
-  interactable: {fileID: 1915076686822571427}
+  interactable: {fileID: 4528509600850544111}
+--- !u!114 &8376471322291986737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1461007386683940875}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d689dc31af242f993adfe1c3d6f62f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   useAttachDelay: 0
+  leftHandAttach: {fileID: 989672868094477513}
+  rightHandAttach: {fileID: 8276008309004939371}
 --- !u!114 &344377261088478489
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,7 +516,7 @@ GameObject:
   m_Component:
   - component: {fileID: 835689805403203214}
   m_Layer: 0
-  m_Name: Tube_WaterTap(full)_XRIT
+  m_Name: Tube_WaterTap(full)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -632,10 +647,10 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6671889441800982974}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.0000000023945532, y: 0.11067872, z: 0.000000013232242, w: 0.9938563}
-  m_LocalPosition: {x: 0.0438, y: 0.0717, z: 0.0386}
+  m_LocalRotation: {x: 0.34342015, y: 0.4850977, z: -0.6410792, w: 0.4855517}
+  m_LocalPosition: {x: 0.1485, y: 0.0669, z: -0.062}
   m_LocalScale: {x: -1, y: 1.0000002, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2919901966250585500}
-  m_LocalEulerAnglesHint: {x: 0, y: 12.709, z: 0}
+  m_LocalEulerAnglesHint: {x: 72.837, y: 5.983, z: -101.303}
